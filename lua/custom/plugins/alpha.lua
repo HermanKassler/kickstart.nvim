@@ -31,7 +31,6 @@ return {
 
       ]]
 
-      local marginBottom = 0
       dashboard.section.header.val = vim.split(logo, '\n')
 
       -- Split logo into lines
