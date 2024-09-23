@@ -6,6 +6,8 @@ vim.keymap.set('n', 'ö', ':', { desc = 'Open command' })
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set({ 'n', 'i' }, '<M-i>', '<cmd>m -2<CR>')
 vim.keymap.set({ 'n', 'i' }, '<M-k>', '<cmd>m +1<CR>')
+
+vim.keymap.set('n', '<leader>fb', ':Telescope file_browser <CR>')
 -- -----------Kickstart Default Binds----------------
 --  See `:help vim.keymap.set()`
 -- Keybinds to make split navigation easier.

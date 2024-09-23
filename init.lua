@@ -69,6 +69,7 @@ require('lazy').setup({
       },
     },
   },
+  require 'custom.plugins.neotree',
 
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
@@ -205,8 +206,13 @@ require('lazy').setup({
             i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           },
         },
-        -- pickers = {}
+        pickers = {
+          -- file_browser = {},
+        },
         extensions = {
+          file_browser = {
+            hijack_netrw = true,
+          },
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
           },

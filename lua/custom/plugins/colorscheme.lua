@@ -12,4 +12,7 @@ return {
   {
     'Mofiqul/dracula.nvim',
   },
+  {
+    'loctvl842/monokai-pro.nvim',
+  },
 }
