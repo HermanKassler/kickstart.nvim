@@ -431,6 +431,7 @@ require('lazy').setup({
       local servers = {
         clangd = {},
         -- java_language_server = {},
+        jdtls = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -732,6 +733,14 @@ require('lazy').setup({
     --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+  },
+  {
+    'nvim-treesitter/nvim-treesitter-context',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    opts = {
+      multiline_threshold = 2,
+      mode = 'topline',
+    },
   },
 
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart

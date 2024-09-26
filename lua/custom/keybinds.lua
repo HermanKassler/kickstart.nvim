@@ -8,6 +8,11 @@ vim.keymap.set({ 'n', 'i' }, '<M-i>', '<cmd>m -2<CR>')
 vim.keymap.set({ 'n', 'i' }, '<M-k>', '<cmd>m +1<CR>')
 
 vim.keymap.set('n', '<leader>fb', ':Telescope file_browser <CR>')
+
+vim.keymap.set('n', '[c', function()
+  require('treesitter-context').go_to_context(vim.v.count1)
+end, { silent = true })
+
 -- -----------Kickstart Default Binds----------------
 --  See `:help vim.keymap.set()`
 -- Keybinds to make split navigation easier.
