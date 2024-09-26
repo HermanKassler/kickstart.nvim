@@ -4,10 +4,15 @@ vim.g.maplocalleader = ' '
 
 vim.keymap.set('n', 'ö', ':', { desc = 'Open command' })
 vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
-vim.keymap.set({ 'n', 'i' }, '<M-i>', '<cmd>m -2<CR>')
 vim.keymap.set({ 'n', 'i' }, '<M-k>', '<cmd>m +1<CR>')
-
+vim.keymap.set({ 'n', 'i' }, '<M-i>', '<cmd>m -2<CR>')
+vim.keymap.set('i', '<M-BS>', '<c-w>', { desc = 'Delete whole word backwards' })
 vim.keymap.set('n', '<leader>fb', ':Telescope file_browser <CR>')
+vim.keymap.set('n', 'L', '$')
+vim.keymap.set('n', 'H', '_')
+
+vim.keymap.set('n', '<C-U>', '<C-U>zz')
+vim.keymap.set('n', '<C-D>', '<C-D>zz')
 
 vim.keymap.set('n', '[c', function()
   require('treesitter-context').go_to_context(vim.v.count1)
