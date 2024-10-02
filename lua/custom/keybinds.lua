@@ -3,7 +3,6 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.keymap.set('n', 'ö', ':', { desc = 'Open command' })
-vim.keymap.set('n', '<leader>pv', vim.cmd.Ex)
 vim.keymap.set({ 'n', 'i' }, '<M-k>', '<cmd>m +1<CR>')
 vim.keymap.set({ 'n', 'i' }, '<M-i>', '<cmd>m -2<CR>')
 vim.keymap.set('i', '<M-BS>', '<c-w>', { desc = 'Delete whole word backwards' })

@@ -59,7 +59,7 @@ require('lazy').setup({
 
   { -- Autoformat
     'stevearc/conform.nvim',
-    event = { 'BufWritePre' },
+    event = { 'BufReadPre', 'BufWritePre' },
     cmd = { 'ConformInfo' },
     keys = {
       {
@@ -93,7 +93,18 @@ require('lazy').setup({
         lua = { 'stylua' },
         c = { 'custom_clang' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        python = { 'isort', 'black' },
+        javascript = { 'prettier' },
+        html = { 'prettier' },
+        json = { 'prettier' },
+        typescript = { 'prettier' },
+        css = { 'prettier' },
+        markdown = { 'prettier' },
+        -- java = { 'clang-format' },
+        c = { 'clang-format' },
+        cpp = { 'clang-format' },
+        cs = { 'clang-format' },
+        java = { 'google-java-format' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
