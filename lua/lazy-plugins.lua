@@ -91,11 +91,18 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
+        c = { 'custom_clang' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
+      },
+      formatters = {
+        custom_clang = {
+          command = 'clang-format',
+          args = '--style="{BasedOnStyle: llvm, IndentWidth: 4}"',
+        },
       },
     },
   },
@@ -257,6 +264,7 @@ require('lazy').setup({
   },
 
   -- require 'kickstart.plugins.debug',
+  require 'kickstart.plugins.treesitter',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
