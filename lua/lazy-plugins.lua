@@ -18,8 +18,8 @@ require('lazy').setup({
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
-        add = { text = '+' },
-        change = { text = '~' },
+        add = { text = '┃' },
+        change = { text = '┃' },
         delete = { text = '_' },
         topdelete = { text = '‾' },
         changedelete = { text = '~' },
@@ -146,12 +146,15 @@ require('lazy').setup({
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'onsails/lspkind.nvim',
     },
     config = function()
       -- See `:help cmp`
       local cmp = require 'cmp'
       local luasnip = require 'luasnip'
+      local lspkind = require 'lspkind'
       luasnip.config.setup {}
+      lspkind.setup {}
 
       cmp.setup {
         snippet = {
@@ -218,10 +221,19 @@ require('lazy').setup({
             name = 'lazydev',
             -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
             group_index = 0,
+            max_item_count = 8,
           },
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
-          { name = 'path' },
+          { name = 'nvim_lsp', max_item_count = 8 },
+          { name = 'luasnip', max_item_count = 8 },
+          { name = 'path', max_item_count = 8 },
+        },
+        formatting = {
+          format = lspkind.cmp_format(),
+        },
+        window = {
+          completion = {
+            -- winhighlight = 'Normal:Pmenu,FloatBorder:Pmenu,Search:None',
+          },
         },
       }
     end,
