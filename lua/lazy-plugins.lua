@@ -1,5 +1,10 @@
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
+  {
+    'vhyrro/luarocks.nvim',
+    priority = 1000,
+    config = true,
+  },
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
   -- NOTE: Plugins can also be added by using a table,
@@ -100,11 +105,11 @@ require('lazy').setup({
         typescript = { 'prettier' },
         css = { 'prettier' },
         markdown = { 'prettier' },
-        -- java = { 'clang-format' },
-        c = { 'clang-format' },
+        java = { 'clang-format' },
+        -- c = { 'clang-format' },
         cpp = { 'clang-format' },
         cs = { 'clang-format' },
-        java = { 'google-java-format' },
+        -- java = { 'google-java-format' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -275,7 +280,7 @@ require('lazy').setup({
   },
 
   -- require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.treesitter',
+  -- require 'kickstart.plugins.treesitter',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
