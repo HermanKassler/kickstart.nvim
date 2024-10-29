@@ -14,7 +14,7 @@ vim.keymap.set('n', '<TAB>j', '<cmd>bp<CR>')
 vim.keymap.set('n', '<TAB>k', '<cmd>bn<CR>')
 vim.keymap.set('n', 'L', '$')
 vim.keymap.set('n', 'H', '_')
-vim.keymap.set('n', '<leader>tr', '<cmd>term<CR>', { desc = 'Pause Neovim (open terminal)' })
+vim.keymap.set('n', '<leader>tr', '<C-w>v<cmd>term<CR>', { desc = 'Pause Neovim (open terminal)' })
 
 vim.keymap.set('n', '<C-U>', '<C-U>zz')
 vim.keymap.set('n', '<C-D>', '<C-D>zz')
@@ -22,7 +22,6 @@ vim.keymap.set('n', '<C-D>', '<C-D>zz')
 vim.keymap.set('n', '[c', function()
   require('treesitter-context').go_to_context(vim.v.count1)
 end, { silent = true })
-
 
 -- -----------Kickstart Default Binds----------------
 --  See `:help vim.keymap.set()`
